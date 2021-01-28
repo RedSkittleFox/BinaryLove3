@@ -24,7 +24,7 @@ jobs:
       - name: Run MSBuild
         id: run_msbuild
         working-directory: $
-        run: msbuild .\BinaryLove3.sln
+        run: msbuild BinaryLove3_Test.vcxproj
 
       - name: Setup VSTest and add to PATH
         uses: darenm/Setup-VSTest@v1
