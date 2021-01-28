@@ -23,7 +23,7 @@ jobs:
 
       - name: Run MSBuild
         id: run_msbuild
-        working-directory: $
+        working-directory: ${{env.GITHUB_WORKSPACE}}
         run: msbuild BinaryLove3_Test.vcxproj
 
       - name: Setup VSTest and add to PATH
