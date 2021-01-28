@@ -1,8 +1,7 @@
 name: MSBuild
 
 on: [push]
-  branches:
-    - master
+
 env:
   # Path to the solution file relative to the root of the project.
   SOLUTION_FILE_PATH: .
