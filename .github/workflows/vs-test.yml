@@ -32,5 +32,5 @@ jobs:
 
       - name: Run VSTest
         id: run_vstest
-        working-directory: ${{env.GITHUB_WORKSPACE}}\x64\Debug\
-        run: vstest.console.exe /Platform:x64 UnitTests.dll
+        working-directory: ${{env.GITHUB_WORKSPACE}}\Debug\
+        run: vstest.console.exe /Platform:x86 UnitTests.dll
