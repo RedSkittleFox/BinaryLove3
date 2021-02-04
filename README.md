@@ -108,3 +108,6 @@ bool deserialize(const std::byte*& cur_, const std::byte* end_, foo& obj_)
   return true;
 }
 ```
+
+# Notes
+This library works only with up to 10 member variables of an aggregate type right now. This will be expanded in the near future. Cheers!
