@@ -2,24 +2,24 @@
 ![Unit Tests](https://github.com/RedSkittleFox/BinaryLove3/workflows/VS%20Test%20Platform/badge.svg)
 
 # BinaryLove3
-Simple C++ 20 Serialization Library
+Simple C++ 20 Serialization Library that works out of the box with aggregate types!
 
 # Requirements
 BinaryLove3 is a c++20 only library. 
 Library can serialize only types maching these requirements:
 * trivial types (e.g. `uint32_t`, `struct { uint32_t a; float_t b; }`): 
   
-  Types maching requirements for `std::is_trivial_v<T>`.
+  Types maching requirements for [`std::is_trivial`](https://en.cppreference.com/w/cpp/types/is_trivial).
 * agregate types (e.g. `std::pair`, `struct { uint32_t a; std::vector<uint32_t> b; }`):
   
-  Types maching requirements for `std::is_aggregate`.
+  Types maching requirements for [`std::is_aggregate`](https://en.cppreference.com/w/cpp/types/is_aggregate).
 * iterable types (e.g. `std::vector`):
   
-  Type is required to have specializations for `std::begin`, `std::end` and `std::inserter`. Additionally member type `value_type` is also required.
+  Type is required to be compatible with [`std::begin`](https://en.cppreference.com/w/cpp/iterator/begin), [`std::end`](https://en.cppreference.com/w/cpp/iterator/end) and [`std::inserter`](https://en.cppreference.com/w/cpp/iterator/inserter). Additionally member type `value_type` is also required.
   
-  If type's iterator fullfils `std::random_access_iterator` requirement and `value_type` is trivial then optimisations will be made. 
+  If type's iterator fullfils [`std::random_access_iterator`](https://en.cppreference.com/w/cpp/iterator/random_access_iterator) requirement and `value_type` matches requirement [`is_trivial`](https://en.cppreference.com/w/cpp/types/is_trivial) then optimisations will be made. 
 
-* typees providing specializations for `BinaryLove3::serialize` and `BinaryLove3::deserialize`. Refer to [Providing custom serialization methods](https://github.com/RedSkittleFox/BinaryLove3#providing-custom-serialization-methods)
+* types providing specializations for `BinaryLove3::serialize` and `BinaryLove3::deserialize`. Refer to [Providing custom serialization methods](https://github.com/RedSkittleFox/BinaryLove3#providing-custom-serialization-methods)
 
 # Usage
 ```cpp
