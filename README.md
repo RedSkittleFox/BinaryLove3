@@ -19,6 +19,8 @@ Library can serialize only types maching these requirements:
   
   If type's iterator fullfils `std::random_access_iterator` requirement and `value_type` is trivial then optimisations will be made. 
 
+* typees providing specializations for `BinaryLove3::serialize` and `BinaryLove3::deserialize`. Refer to [Providing custom serialization methods](https://github.com/RedSkittleFox/BinaryLove3#providing-custom-serialization-methods)
+
 # Usage
 ```cpp
 // demo.cpp
