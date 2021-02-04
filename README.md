@@ -17,7 +17,7 @@ Library can serialize only types maching these requirements:
   
   Type is required to be compatible with [`std::begin`](https://en.cppreference.com/w/cpp/iterator/begin), [`std::end`](https://en.cppreference.com/w/cpp/iterator/end) and [`std::inserter`](https://en.cppreference.com/w/cpp/iterator/inserter). Additionally member type `value_type` is also required.
   
-  If type's iterator fullfils [`std::random_access_iterator`](https://en.cppreference.com/w/cpp/iterator/random_access_iterator) requirement and `value_type` matches requirement [`is_trivial`](https://en.cppreference.com/w/cpp/types/is_trivial) then optimisations will be made. 
+  If type's iterator fulfils [`std::random_access_iterator`](https://en.cppreference.com/w/cpp/iterator/random_access_iterator) requirement and `value_type` matches requirement [`is_trivial`](https://en.cppreference.com/w/cpp/types/is_trivial) then optimisations will be made. 
 
 * types providing specializations for `BinaryLove3::serialize` and `BinaryLove3::deserialize`. Refer to [Providing custom serialization methods](https://github.com/RedSkittleFox/BinaryLove3#providing-custom-serialization-methods)
 
