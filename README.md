@@ -6,13 +6,13 @@ Simple C++ 20 Serialization Library that works out of the box with aggregate typ
 
 # Requirements
 BinaryLove3 is a c++20 only library. 
-Library can serialize only types maching these requirements:
+Library can serialize only types matching these requirements:
 * trivial types (e.g. `uint32_t`, `struct { uint32_t a; float_t b; }`): 
   
-  Types maching requirements for [`std::is_trivial`](https://en.cppreference.com/w/cpp/types/is_trivial).
+  Types matching requirements for [`std::is_trivial`](https://en.cppreference.com/w/cpp/types/is_trivial).
 * agregate types (e.g. `std::pair`, `struct { uint32_t a; std::vector<uint32_t> b; }`):
   
-  Types maching requirements for [`std::is_aggregate`](https://en.cppreference.com/w/cpp/types/is_aggregate).
+  Types matching requirements for [`std::is_aggregate`](https://en.cppreference.com/w/cpp/types/is_aggregate).
 * iterable types (e.g. `std::vector`):
   
   Type is required to be compatible with [`std::begin`](https://en.cppreference.com/w/cpp/iterator/begin), [`std::end`](https://en.cppreference.com/w/cpp/iterator/end) and [`std::inserter`](https://en.cppreference.com/w/cpp/iterator/inserter). Additionally member type `value_type` is also required.
