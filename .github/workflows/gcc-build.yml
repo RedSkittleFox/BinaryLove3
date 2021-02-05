@@ -13,6 +13,7 @@ jobs:
                  
     - name: Update GCC
       run:  |
+        echo "CC=gcc-8"
         gcc --version
         
                  
