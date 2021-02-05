@@ -1,4 +1,4 @@
-name: Build Demo
+name: Build MSVC
 
 on: [push]
 
