@@ -27,8 +27,8 @@ namespace BinaryLove3
         concept iterable =
             requires (T v_)
         {
-            T::iterator;
-            T::value_type;
+            typename T::iterator;
+            typename T::value_type;
             { std::begin(v_) } -> std::same_as<typename T::iterator>;
             { std::end(v_) } -> std::same_as<typename T::iterator>;
         };
@@ -37,8 +37,8 @@ namespace BinaryLove3
         concept const_iterable =
             requires (T v_)
         {
-            T::const_iterator;
-            T::value_type;
+            typename T::const_iterator;
+            typename T::value_type;
             { std::cbegin(v_) } -> std::same_as<typename T::const_iterator>;
             { std::cend(v_) } -> std::same_as<typename T::const_iterator>;
         };
@@ -404,7 +404,7 @@ namespace BinaryLove3
         struct serialize_functor
         {
             template<class T>
-            static inline constexpr void executor(const T& obj_, std::vector<std::byte>& data_)
+            static inline void executor(const T& obj_, std::vector<std::byte>& data_)
             {
                 std::vector<std::byte> data = serialize(obj_);
                 data_.insert(std::end(data_), std::begin(data), std::end(data));
@@ -414,7 +414,7 @@ namespace BinaryLove3
         struct deserialize_functor
         {
             template<class T>
-            static inline constexpr void executor(T& obj_, const std::byte*& cur_, const std::byte* end_, bool& error_)
+            static inline void executor(T& obj_, const std::byte*& cur_, const std::byte* end_, bool& error_)
             {
                 if (error_) return;
                 T temp;
