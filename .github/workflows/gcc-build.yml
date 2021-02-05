@@ -18,5 +18,5 @@ jobs:
       
     - name: Build Demo
       working-directory: ${{env.GITHUB_WORKSPACE}}
-      run: gcc demo.cpp -std=c++20 
+      run: g++ demo.cpp -std=c++20 
 
