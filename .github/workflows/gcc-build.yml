@@ -10,12 +10,7 @@ jobs:
 
     steps:
     - uses: actions/checkout@v2
-     
-    - name: Install GCC
-      run:   |
-        sudo apt update
-        sudo apt install gcc-10 g++-10 cpp-10
-      
+           
     - name: Build Demo
       working-directory: ${{env.GITHUB_WORKSPACE}}
       run: g++ demo.cpp -std=gnu++2a
