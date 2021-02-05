@@ -12,9 +12,11 @@ jobs:
     - uses: actions/checkout@v2
                  
     - name: Update GCC
-      run: gcc --version
+      run:  |
+        gcc --version
+        
                  
     - name: Build Demo
       working-directory: ${{env.GITHUB_WORKSPACE}}
-      run: g++ demo.cpp --std=c++20
+      run: g++10 demo.cpp --std=c++20
 
