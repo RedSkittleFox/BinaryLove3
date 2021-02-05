@@ -10,7 +10,10 @@ jobs:
 
     steps:
     - uses: actions/checkout@v2
-                      
+                 
+    - name: Update GCC
+      run: gcc --version
+                 
     - name: Build Demo
       working-directory: ${{env.GITHUB_WORKSPACE}}
       run: g++ demo.cpp --std=c++20
