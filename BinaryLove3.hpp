@@ -123,13 +123,18 @@ namespace BinaryLove3
         requires(details::random_access_iterable<T>)
     {
         using value = typename T::value_type;
-        const value* beg = &(*std::begin(var_));
-        size_t size = std::distance(std::begin(var_), std::end(var_));
-
+        size_t size = std::size(var_);
         std::vector<std::byte> data(sizeof(uint64_t) + sizeof(value) * size);
+
         uint64_t size64 = static_cast<uint64_t>(size) * sizeof(value) + sizeof(uint64_t);
         std::memcpy(data.data(), &size64, sizeof(uint64_t));
-        std::memcpy(data.data() + sizeof(uint64_t), beg, static_cast<size_t>(size64 - sizeof(uint64_t)));
+
+    	if(size != 0)
+    	{
+			const value* beg = &(*std::begin(var_));
+			std::memcpy(data.data() + sizeof(uint64_t), beg, static_cast<size_t>(size64 - sizeof(uint64_t)));
+    	}
+    	
         return data;
     }
 

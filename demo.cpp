@@ -29,7 +29,7 @@ struct test0
 
 auto main() -> int32_t
 {
-	test0 bobux = { 4, 5, 6.7f, 'd', {{5, 4, 3, 2}, {"cc", "dd"}, "homofobo" , {7, 8, 9}}, {3, 4} };
+	test0 bobux = { 4, 5, 6.7f, 'd', {{5, 4, 3, 2}, {"cc", "dd"}, "" , {7, 8, 9}}, {3, 4}};
 	auto data = BinaryLove3::serialize(bobux);
 	
 	test0 bobux1;
